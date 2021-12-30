@@ -1,5 +1,6 @@
 import React from "react";
 import Joi from "joi-browser";
+import Redirect from "react-router-dom/Redirect";
 import MainForm from "./mainForm";
 import auth from "../../services/authService";
 
@@ -28,6 +29,9 @@ class LoginForm extends MainForm {
 
     render() {
         const { history } = this.props;
+        const user = auth.getCurrentUser();
+
+        if (user) return <Redirect to={"/products"} />;
 
         return(
             <React.Fragment>
@@ -38,16 +42,7 @@ class LoginForm extends MainForm {
                     { this.renderInputForm("email", "Email", "Email@") }
                     { this.renderInputForm("password", "Password", "Password", "Password") }
 
-                    {/*<button*/}
-                    {/*    className={"btn btn-outline-info btn-space"}*/}
-                    {/*    disabled={this.validate()}*/}
-                    {/*    onClick={this.handleSubmit}*/}
-                    {/*>*/}
-                    {/*    Login*/}
-                    {/*</button>*/}
-
                     { this.renderButton("btn-outline-success", "Login", this.handleSubmit, this.validate()) }
-
                     { this.renderButton("btn-outline-info", "Signup", () => this.handleButtonCLick(history, "/signup", "Signup"),false)}
 
                 </form>
