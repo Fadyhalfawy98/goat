@@ -1,4 +1,5 @@
 {
   "userPath": "http://localhost:3900/api/users",
+  "productPath": "http://localhost:3900/api/products",
   "authPath": "http://localhost:3900/api/auth"
 }
