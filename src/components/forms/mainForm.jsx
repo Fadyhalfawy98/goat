@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import Joi from "joi-browser";
 import InputForm from "./inputForm";
 import HandleButtonTransfer from "../../helperFunctions/handleButtonTransfer";
+import SelectForm from "./selectForm";
 
 class MainForm extends Component {
     state = {
@@ -89,6 +90,20 @@ class MainForm extends Component {
               {label}
           </button>
       );
+    };
+
+    renderSelect(name, label, options) {
+        const { data, errors} = this.state;
+      return(
+          <SelectForm
+              id={name}
+              value={data[name]}
+              label={label}
+              onChange={this.handleChange}
+              options={options}
+              error={errors[name]}
+          />
+      )
     };
 
 }
