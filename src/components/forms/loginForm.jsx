@@ -46,9 +46,9 @@ class LoginForm extends MainForm {
                     {/*    Login*/}
                     {/*</button>*/}
 
-                    { this.renderButton("btn-outline-info", "Login", this.handleSubmit, this.validate()) }
+                    { this.renderButton("btn-outline-success", "Login", this.handleSubmit, this.validate()) }
 
-                    { this.renderButton("btn-outline-success", "Signup", () => this.handleButtonCLick(history, "/signup", "Signup"),false)}
+                    { this.renderButton("btn-outline-info", "Signup", () => this.handleButtonCLick(history, "/signup", "Signup"),false)}
 
                 </form>
         </React.Fragment>
