@@ -1,5 +1,6 @@
 {
   "userPath": "http://localhost:3900/api/users",
-  "productPath": "http://localhost:3900/api/products",
+  "productPath": "http://localhost:3900/api/rentals",
+  "genrePath": "http://localhost:3900/api/customers",
   "authPath": "http://localhost:3900/api/auth"
 }

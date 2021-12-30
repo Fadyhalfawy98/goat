@@ -10,6 +10,8 @@ import LoginForm from "./components/forms/loginForm";
 import SignupForm from "./components/forms/signupForm";
 import NotFoundForm from "./components/forms/notFoundForm";
 import Audit from "./components/forms/audit";
+import Products from "./components/forms/tableForm/products";
+import ProductForm from "./components/forms/productForm";
 
 class App extends Component {
     state = {}
@@ -34,6 +36,8 @@ class App extends Component {
                     <Switch>
                         <Route path={"/login"} component={LoginForm} />
                         <Route path={"/signup"} component={SignupForm} />
+                        <ProtectedRoute path={"/products/:id"} component={ProductForm} />
+                        <ProtectedRoute path={"/products"} component={Products} />
                         <ProtectedRoute path={"/audit"} component={Audit} />
                         <Route path={"/logout"} component={Logout} />
                         <Route path={"/notfound"} component={NotFoundForm} />
