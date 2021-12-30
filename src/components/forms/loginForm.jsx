@@ -57,14 +57,13 @@ class LoginForm extends MainForm {
 
     doSubmit = async () => {
         const {data, errors} = this.state;
-        // const { location } = this.props;
+        const { location } = this.props;
 
         try {
             await auth.login(data.email, data.password);
-            console.log("User");
-            // const {  state } = location;
-            //
-            // window.location = state ? state.from.pathname : "/";
+            const {  state } = location;
+
+            window.location = state ? state.from.pathname : "/audit";
         }
         catch (e) {
             if (e.response && e.response.status === 400) {
