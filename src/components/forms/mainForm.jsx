@@ -50,8 +50,6 @@ class MainForm extends Component {
         this.setState({ errors: errors || {} });
         if (errors) return;
 
-        console.log("Submitted");
-
         this.doSubmit();
     };
 
