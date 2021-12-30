@@ -63,7 +63,7 @@ class LoginForm extends MainForm {
             await auth.login(data.email, data.password);
             const {  state } = location;
 
-            window.location = state ? state.from.pathname : "/audit";
+            window.location = state ? state.from.pathname : "/products";
         }
         catch (e) {
             if (e.response && e.response.status === 400) {
