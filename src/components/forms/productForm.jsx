@@ -70,7 +70,6 @@ class ProductForm extends MainForm {
 
     mapToViewModel(product) {
         return {
-          _id: product._id,
           name: product.name,
           genreId: product.genre._id
         };
