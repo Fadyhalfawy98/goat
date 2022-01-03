@@ -2,7 +2,6 @@ import MainForm from "./mainForm";
 import Joi from "joi-browser";
 import auth from "../../services/authService";
 import React from "react";
-import {date} from "joi";
 
 class ProfileForm extends MainForm {
     state = {

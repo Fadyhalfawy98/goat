@@ -13,6 +13,7 @@ import Audit from "./components/forms/audit";
 import Products from "./components/forms/tableForm/products";
 import ProductForm from "./components/forms/productForm";
 import ProfileForm from "./components/forms/profileForm";
+import Home from "./components/forms/tableForm/home";
 
 class App extends Component {
     state = {}
@@ -37,6 +38,7 @@ class App extends Component {
                     <Switch>
                         <Route path={"/login"} component={LoginForm} />
                         <Route path={"/signup"} component={SignupForm} />
+                        <ProtectedRoute path={"/home"} component={Home} />
                         <ProtectedRoute path={"/products/:id"} component={ProductForm} />
                         <ProtectedRoute path={"/products"} component={Products} />
                         <ProtectedRoute path={"/profile"} component={ProfileForm} />
