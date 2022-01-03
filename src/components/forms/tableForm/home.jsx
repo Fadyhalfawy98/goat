@@ -23,15 +23,17 @@ class Home extends Component {
 
     componentDidMount() {
         const data = getGenres();
-        const { data: rooms } = getRooms();
-        const genres = [ { _id: "", name: "All Rooms" }, ...data ];
-        this.setState({ rooms, genres });
+
+        const genres = [ { _id: "", name: "All Rooms" }, ...data ]
+        this.setState({ rooms: getRooms(), genres });
     }
+
 
     render() {
         const { rooms: allRooms, genres, selectedGenre, searchQuery, pageSize, currentPage, sortColumn } = this.state;
 
-        const {length, filteredRooms} = getPageData(allRooms, selectedGenre, pageSize, currentPage, sortColumn, searchQuery);
+        const {length, filteredProducts} = getPageData(allRooms, selectedGenre, pageSize, currentPage, sortColumn, searchQuery);
+
 
         const user = auth.getCurrentUser();
 
@@ -56,7 +58,7 @@ class Home extends Component {
                         />
 
                         <HomeTable
-                            filteredRooms={filteredRooms}
+                            filteredProducts={filteredProducts}
                             onSort={this.handleSort}
                             sortColumn={sortColumn}
                         />
