@@ -4,23 +4,26 @@ import DisplayTable from "./displayTable";
 
 class HomeTable extends Component {
     render() {
+        const { filteredProducts, sortColumn, onSort } = this.props;
         return(
             <DisplayTable
-                filteredProducts={this.props.filteredRooms}
-                sortColumn={this.props.sortColumn}
-                onSort={this.props.onSort}
+                filteredProducts={filteredProducts}
+                sortColumn={sortColumn}
+                onSort={onSort}
                 columns={this.columns}
             />
         );
     }
 
     columns = [
-        { path: "title", label: "Title", content: room => (
-                <Link to={`/home/${room._id}/${room.title}`}>
-                    {room.title}
-                </Link>
-            ) },
-        { path: "genre.name", label: "Genre" }
+        { path: "title", label: "Title" },
+        { path: "genre.name", label: "Genre" },
+
+        { key: "select", content: room => (
+            <Link to={`/home/${room._id}/${room.title}`} className={"btn btn-outline-info btn-sm"}>
+                Select
+            </Link>
+            ) }
     ];
 }
 export default HomeTable;
