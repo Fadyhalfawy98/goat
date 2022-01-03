@@ -12,22 +12,22 @@ const rooms = [
     {
         _id: "3",
         title: "Room3",
-        genre: { _id: "0", name: "Free" }
+        genre: { _id: "2", name: "Reserved" }
     },
     {
         _id: "4",
         title: "Room4",
-        genre: { _id: "0", name: "Free" }
+        genre: { _id: "2", name: "Reserved" }
     },
     {
         _id: "5",
         title: "Room5",
-        genre: { _id: "0", name: "Free" }
+        genre: { _id: "1", name: "Busy" }
     },
     {
         _id: "6",
         title: "Room6",
-        genre: { _id: "0", name: "Free" }
+        genre: { _id: "1", name: "Busy" }
     },
     {
         _id: "7",
