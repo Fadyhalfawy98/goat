@@ -17,7 +17,7 @@ class Products extends Component {
         genres: [],
         searchQuery: "",
         selectedGenre: "",
-        pageSize: 5,
+        pageSize: 3,
         currentPage: 1,
         sortColumn: { path: 'name', order: 'asc' }
     };
